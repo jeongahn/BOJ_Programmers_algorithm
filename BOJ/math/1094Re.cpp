@@ -1,3 +1,5 @@
+//baekjoon 1094 silver5 막대기
+
 #include <iostream>
 #include <vector>
 
@@ -46,3 +48,6 @@ int main(){
 
     return 0;
 }
+
+// 비트마스킹 알고리즘으로 다시 풀어보기!!
+//

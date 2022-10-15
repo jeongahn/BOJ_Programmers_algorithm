@@ -1,3 +1,5 @@
+//baekjoon 1068 gold5 트리
+
 //parent pointer implementation of trees
 #include <iostream>
 #include <vector>

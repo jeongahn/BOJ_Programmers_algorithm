@@ -1,3 +1,5 @@
+//baekjoon 1018 silver4 체스판 다시 칠하기
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

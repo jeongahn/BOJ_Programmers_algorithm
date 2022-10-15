@@ -1,3 +1,5 @@
+//baekjoon 1049 silver4 기타줄
+
 #include <iostream>
 #include <algorithm>
 

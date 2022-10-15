@@ -1,4 +1,4 @@
-// 1037
+//baekjoon 1037 bronze 1 약수
 #include <iostream>
 #include <algorithm>
 
