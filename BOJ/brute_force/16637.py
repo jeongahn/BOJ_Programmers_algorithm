@@ -15,6 +15,8 @@ DFS로 괄호를 묶은것과 괄호를 묶지 않은 것으로 구분지어서 
 
 
 '''
+# baekjoon 16637 gold3 괄호 추가하기
+# 23년 상반기 Foscar 알고리즘 스터디 5조 1주차 4번
 
 length = int(input())
 express = input()
