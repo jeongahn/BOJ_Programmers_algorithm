@@ -4,55 +4,32 @@
 from sys import stdin
 import copy
 
-n = int(stdin.readline())
-
-first = list(map(int, stdin.readline().rstrip()))
-
-target = list(map(int, stdin.readline().rstrip()))
-
-copy1 = copy.deepcopy(first)
-copy2 = copy.deepcopy(first)
+n = int(input())
+bulb = list(map(int, input()))
+target = list(map(int, input()))
 
 
+def change(A, B):
+    L = A[:]
+    press = 0
+    for i in range(1, n):
+        # 이전 전구가 같은 상태면 pass
+        if L[i-1] == B[i-1]:
+            continue
+        # 상태가 다를 경우
+        press += 1
+        for j in range(i-1, i+2):
+            if j<n:
+                L[j] = 1 - L[j]
+    return press if L == B else 1e9
 
 
-def flip_two(a, b):
-    first[a] = 1 - first[a] 
-    first[b] = 1 - first[b]
-
-def flip_three(a,b,c):
-    first[a] = 1 - first[a] 
-    first[b] = 1 - first[b]
-    first[c] = 1 - first[c]
-
-
-
-
-for i in range(2):
-    first = copy1 if i == 0 else copy2
-    
-    answer = 0
-
-    for j in range(n):
-        if j == 0:
-            if i == 0 and first != target:
-                answer += 1
-                flip_two(j, j + 1)
-        elif 1 <= j <= n-2:
-            if first[j-1] != target[j-1]:
-                answer += 1
-                flip_three(j-1, j, j + 1)
-        elif j == n - 1:
-            if first[j-1] != target[j-1]:
-                answer += 1
-                flip_two(j-1, j)
-    
-    if first == target:
-        print(answer)
-        break
-
-if first != target:
-    print(-1)
-
+# 첫번째 전구의 스위치를 누르지 않는 경우
+res = change(bulb, target)
+# 첫번째 전구의 스위치를 누르는 경우
+bulb[0] = 1 - bulb[0]
+bulb[1] = 1 - bulb[1]
+res = min(res, change(bulb, target) + 1)
+print(res if res != 1e9 else -1)
 
 
