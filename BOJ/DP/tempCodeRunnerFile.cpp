@@ -1,1 +1,2 @@
- 
+
+    cout << answer << '\n';
